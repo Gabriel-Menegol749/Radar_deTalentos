@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Radar de Talentos</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%232f5d50%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2218%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Georgia%22%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/kanban.css">
+<link rel="stylesheet" href="/css/presentation.css">
+</head>
+<body>
+<div class="app" id="app" hidden>
+
+  <nav class="sidebar hide-in-presentation">
+    <div class="brand">
+      <div class="brand-mark">R</div>
+      <div class="brand-text">Radar de Talentos<span>CRM de prospecção</span></div>
+    </div>
+    <button class="navlink active" data-view="dashboard"><span class="ic">◆</span> Painel</button>
+    <button class="navlink" data-view="pipeline"><span class="ic">➜</span> Pipeline</button>
+    <button class="navlink" data-view="candidatos"><span class="ic">☺</span> Candidatos</button>
+    <button class="navlink" data-view="vagas"><span class="ic">▣</span> Vagas</button>
+    <button class="navlink" data-view="empresas"><span class="ic">▤</span> Empresas</button>
+    <div class="nav-sep"></div>
+    <button class="navlink" data-view="importar"><span class="ic">⇅</span> Importar planilha</button>
+    <button class="navlink" data-view="admin" id="navAdmin" hidden><span class="ic">⚙</span> Administração</button>
+    <div class="nav-foot">Base viva de prospecção &amp; seleção</div>
+    <div class="nav-user">
+      <b id="userName"></b>
+      <span id="userRole"></span>
+      <button class="btn btn-ghost btn-sm" id="btnLogout">Sair</button>
+    </div>
+  </nav>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-head">
+        <div class="topbar-title">
+          <h1 id="topbarTitle">Painel geral</h1>
+          <div class="sub" id="topbarSub">Visão consolidada de todas as vagas e empresas</div>
+        </div>
+        <div class="topbar-actions">
+          <button class="btn btn-ghost btn-sm" id="btnPresentMode">Modo apresentação</button>
+          <button class="btn btn-soft btn-sm" id="btnExportExcel">Exportar Excel</button>
+        </div>
+      </div>
+      <div class="topbar-filters" id="topbarFilters">
+        <select id="filterEmpresaGlobal" aria-label="Filtrar por empresa"><option value="">Todas as empresas</option></select>
+        <select id="filterPosicaoGlobal" aria-label="Filtrar por posição"><option value="">Todas as posições</option></select>
+        <select id="filterVagaGlobal" aria-label="Filtrar por vaga"><option value="">Todas as vagas</option></select>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="view" id="view-dashboard"></section>
+      <section class="view" id="view-pipeline" hidden></section>
+      <section class="view" id="view-candidatos" hidden></section>
+      <section class="view" id="view-vagas" hidden></section>
+      <section class="view" id="view-empresas" hidden></section>
+      <section class="view" id="view-importar" hidden></section>
+      <section class="view" id="view-admin" hidden></section>
+    </div>
+  </div>
+</div>
+
+<div id="modalRoot"></div>
+<div class="toast" id="toast"></div>
+<script type="module" src="/js/main.js"></script>
+</body>
+</html>

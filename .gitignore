@@ -1,0 +1,26 @@
+# Dados pessoais reais (LGPD — D9). Nunca versionar.
+Referência/
+Referencia/
+*.xlsx
+*.xls
+
+# Frontend
+node_modules/
+frontend/dist/
+.env
+.env.*
+!.env.example
+
+# Backend
+bin/
+obj/
+*.user
+appsettings.Development.json
+appsettings.Local.json
+TestResults/
+
+# Ferramentas
+.vs/
+.vscode/
+.idea/
+*.log

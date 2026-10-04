@@ -1,0 +1,39 @@
+/* Reset e formulários — do protótipo. */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.45;
+}
+::selection { background: var(--accent-soft); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; text-wrap: balance; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+a { color: var(--accent); }
+button { font-family: inherit; }
+input, select, textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13.5px;
+  font-family: inherit;
+}
+textarea { resize: vertical; min-height: 60px; }
+input:focus, select:focus, textarea:focus, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+input[type="checkbox"], input[type="radio"] { width: auto; }
+label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 4px; font-weight: 500; }
+fieldset { border: none; padding: 0; margin: 0; }
+
+[hidden] { display: none !important; }
+.muted { color: var(--text-muted); }
+.stack { display: flex; flex-direction: column; gap: 10px; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
